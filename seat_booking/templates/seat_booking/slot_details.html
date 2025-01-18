@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slot Details</title>
+    <link rel="stylesheet" href="{% static 'css/slot_details.css' %}">
+    <script src="{% static 'js/slot_details.js' %}"></script>
+</head>
+<body>
+    <h1>Slot Details</h1>
+    <p>Seat: {{ slot.seat.seat_number }}</p>
+    <p>Slot: {{ slot.slot }}</p>
+    <h2>Booked By:</h2>
+    <p>Name: {{ slot.booked_by.name }}</p>
+    <p>Aadhar: {{ slot.booked_by.aadhar_number }}</p>
+    <p>Phone: {{ slot.booked_by.phone_number }}</p>
+    <p>Address: {{ slot.booked_by.address }}</p>
+</body>
+</html>

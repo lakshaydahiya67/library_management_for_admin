@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Slot</title>
+    <link rel="stylesheet" href="{% static 'css/book_slot.css' %}">
+    <script src="{% static 'js/book_slot.js' %}"></script>
+</head>
+<body>
+    <h1>Book Slot for {{ slot.slot }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book Slot</button>
+    </form>
+</body>
+</html>

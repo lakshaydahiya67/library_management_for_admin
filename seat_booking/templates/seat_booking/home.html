@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Seat Booking</title>
+    <style>
+        .seat { margin: 10px; padding: 10px; border: 1px solid #000; display: inline-block; }
+        .slot { width: 20px; height: 20px; border-radius: 50%; display: inline-block; margin: 5px; cursor: pointer; }
+        .slot.green { background-color: green; }
+        .slot.red { background-color: red; }
+    </style>
+</head>
+<body>
+    <h1>Library Seat Booking</h1>
+    <div>
+        {% for seat in seats %}
+            <div class="seat">
+                <h3>Seat {{ seat.seat_number }}</h3>
+                {% for slot in seat.time_slots.all %}
+                    <a href="{% url 'book_slot' slot.id %}">
+                        <div class="slot {% if slot.is_booked %}red{% else %}green{% endif %}"></div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
