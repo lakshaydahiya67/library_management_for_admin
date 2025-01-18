@@ -3,17 +3,25 @@
 <html>
 <head>
     <title>Slot Details</title>
+    <!-- Link to the CSS file for styling -->
     <link rel="stylesheet" href="{% static 'css/slot_details.css' %}">
+    <!-- Link to the JavaScript file for functionality -->
     <script src="{% static 'js/slot_details.js' %}"></script>
 </head>
 <body>
     <h1>Slot Details</h1>
+    <!-- Display the seat number -->
     <p>Seat: {{ slot.seat.seat_number }}</p>
+    <!-- Display the slot information -->
     <p>Slot: {{ slot.slot }}</p>
     <h2>Booked By:</h2>
+    <!-- Display the name of the person who booked the slot -->
     <p>Name: {{ slot.booked_by.name }}</p>
+    <!-- Display the Aadhar number of the person who booked the slot -->
     <p>Aadhar: {{ slot.booked_by.aadhar_number }}</p>
+    <!-- Display the phone number of the person who booked the slot -->
     <p>Phone: {{ slot.booked_by.phone_number }}</p>
+    <!-- Display the address of the person who booked the slot -->
     <p>Address: {{ slot.booked_by.address }}</p>
 </body>
 </html>

@@ -3,14 +3,20 @@
 <html>
 <head>
     <title>Book Slot</title>
+    <!-- Link to the CSS file for styling -->
     <link rel="stylesheet" href="{% static 'css/book_slot.css' %}">
+    <!-- Link to the JavaScript file for functionality -->
     <script src="{% static 'js/book_slot.js' %}"></script>
 </head>
 <body>
+    <!-- Display the slot being booked -->
     <h1>Book Slot for {{ slot.slot }}</h1>
+    <!-- Form to book the slot -->
     <form method="post">
         {% csrf_token %}
+        <!-- Render the form fields -->
         {{ form.as_p }}
+        <!-- Submit button for the form -->
         <button type="submit">Book Slot</button>
     </form>
 </body>

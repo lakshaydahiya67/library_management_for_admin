@@ -3,9 +3,13 @@
 <head>
     <title>Library Seat Booking</title>
     <style>
+        /* Style for each seat container */
         .seat { margin: 10px; padding: 10px; border: 1px solid #000; display: inline-block; }
+        /* Style for each time slot */
         .slot { width: 20px; height: 20px; border-radius: 50%; display: inline-block; margin: 5px; cursor: pointer; }
+        /* Style for available slots */
         .slot.green { background-color: green; }
+        /* Style for booked slots */
         .slot.red { background-color: red; }
     </style>
 </head>
@@ -16,6 +20,7 @@
             <div class="seat">
                 <h3>Seat {{ seat.seat_number }}</h3>
                 {% for slot in seat.time_slots.all %}
+                    <!-- Link to book a slot, changes color based on booking status -->
                     <a href="{% url 'book_slot' slot.id %}">
                         <div class="slot {% if slot.is_booked %}red{% else %}green{% endif %}"></div>
                     </a>
